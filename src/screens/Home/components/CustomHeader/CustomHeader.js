@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Feather';
 const CustomHeader = () => {
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} />
+      <TextInput style={styles.input} placeholder="Search..." />
       <Icon
         name="search"
         size={20}

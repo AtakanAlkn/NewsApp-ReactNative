@@ -26,8 +26,8 @@ const newsTitle = [
   },
   {
     id: '6',
-    URL: 'https://www.milliyet.com.tr/rss/rssnew/kitaprss.xml',
-    title: 'Kitap',
+    URL: 'https://www.milliyet.com.tr/rss/rssnew/modarss.xml',
+    title: 'Moda',
   },
   {
     id: '7',

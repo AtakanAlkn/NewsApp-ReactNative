@@ -14,14 +14,14 @@
   
   <div style="display: flex; flex-direction: row; margin-right: 20px;"> 
     <img src="images/m3.jpeg" alt="Error Screen" width="300" style="margin-right: 200;">
-     <img src="images/h3.gif" alt="GIF" width="300" style="margin-right: 20;justify-content: center;">
+     <img src="images/h1.gif" alt="GIF" width="300" style="margin-right: 20;justify-content: center;">
   </div>
   </div>
 
 ## Design Notice
 
-The design is personally crafted, presenting a minimalistic layout for the weather application.
-I executed a straightforward design approach, highlighting essential weather information.
+The design is personally crafted, presenting a minimalistic layout for the news application.
+I executed a straightforward design approach, highlighting essential news information.
 
 This news application is developed using the following technologies and features:
 
@@ -47,14 +47,14 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/AtakanAlkn/Weather-ReactNative.git
+   git clone https://github.com/AtakanAlkn/NewsApp-ReactNative.git
 
 
    ```
 
 2. **Navigate to the project directory:**
 
-   cd Weather-ReactNative.git
+   cd NewsApp-ReactNative.git
 
 3. **Install dependencies:**
 

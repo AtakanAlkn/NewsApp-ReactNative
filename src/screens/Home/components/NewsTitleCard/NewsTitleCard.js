@@ -2,26 +2,55 @@ import React, {useState, useContext, useEffect} from 'react';
 import {View, Text, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import theme from '../../../../assets/theme/theme';
 import {GlobalContext} from '../../../../Context/GlobalState';
+import axios from 'react-native-axios';
+import rssParser from 'react-native-rss-parser';
+import newsTitle from '../../../../data/newsTitlte';
 
 const NewsTitleCard = ({item}) => {
-  const {pressedId, setPressedId} = useContext(GlobalContext);
-  const [currentId, setCurrentId] = useState();
-  const [a, setA] = useState();
-  const onPressed = () => {
-    setCurrentId(item.id);
-    setPressedId(item.id);
+  const {pressedId, setPressedId, setGlobalData, loading, setLoading, titles} =
+    useContext(GlobalContext);
+
+  const fetchData = async rssUrl => {
+    try {
+      setLoading(false);
+      const response = await axios.get(rssUrl);
+      const parsedData = await rssParser.parse(response.data);
+      setGlobalData(parsedData.items);
+      setLoading(true);
+    } catch (error) {
+      setLoading(false);
+    }
   };
 
-  useEffect(() => {}, [currentId]);
+  const onPressed = () => {
+    setPressedId(item.id); // Başlığa tıklandığında tıklananın kim olduğunu kaydet
+    fetchData(newsTitle[item.id - 1].URL);
+  };
+
+  useEffect(() => {
+    if (pressedId === item.id) {
+      setCustomColor(theme.primaryColor); // Tıklanan başlık
+    } else {
+      setCustomColor('white'); // Tıklanmayan başlık
+    }
+  }, [pressedId]);
+
+  const [customColor, setCustomColor] = useState('white'); // Varsayılan olarak beyaz renk
 
   return (
     <TouchableWithoutFeedback onPress={onPressed}>
       <View
         style={{
           ...styles.container,
-          backgroundColor: currentId === a ? theme.primaryColor : 'white',
+          backgroundColor: customColor,
         }}>
-        <Text style={styles.text}>{item.title}</Text>
+        <Text
+          style={{
+            ...styles.text,
+            color: customColor === 'white' ? 'black' : 'white',
+          }}>
+          {item.title}
+        </Text>
       </View>
     </TouchableWithoutFeedback>
   );

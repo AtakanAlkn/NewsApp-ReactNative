@@ -9,8 +9,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: windowWidth,
-    minHeight: windowHeight / 2.4,
+    minHeight: windowHeight / 2.6,
     resizeMode: 'contain',
+    backgroundColor: 'white',
   },
   chevron: {
     backgroundColor: '#F5F5F580',
@@ -24,10 +25,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   background: {
     backgroundColor: 'white',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
     paddingHorizontal: 16,
     flex: 1,
   },

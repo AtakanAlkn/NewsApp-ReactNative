@@ -13,6 +13,7 @@
     "@react-native-community/blur": "^4.3.2",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
+    "lottie-react-native": "^5.1.6",
     "react": "18.2.0",
     "react-native": "0.72.4",
     "react-native-axios": "^0.17.1",
